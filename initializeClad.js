@@ -1,5 +1,5 @@
 /**
- * 
+ * Cade & Brian's Botany App
  */
 
 //GLOBALS... will sort these into their proper scopes later
