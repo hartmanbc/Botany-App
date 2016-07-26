@@ -33,6 +33,15 @@
 	margin: auto;
 }
 
+#cladMap
+{
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    left: 5px;
+    top: 320px;
+}
+
 #infoWindow
 {
     width: 1400px;
