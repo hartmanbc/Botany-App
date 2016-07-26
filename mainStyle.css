@@ -16,6 +16,10 @@
 	box-shadow: 20px 20px 10px #444;
 }
 
+#cladCanvas
+{
+	float: left;
+}
 #canvasBkgd
 {
 	background-image: url('imgs/leather.jpg');
@@ -27,6 +31,15 @@
     width: 1200px;
 	height: 800px;
 	margin: auto;
+}
+
+#cladMap
+{
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    left: 5px;
+    top: 320px;
 }
 
 #infoWindow
