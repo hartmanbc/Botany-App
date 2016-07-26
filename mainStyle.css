@@ -16,6 +16,10 @@
 	box-shadow: 20px 20px 10px #444;
 }
 
+#cladCanvas
+{
+	float: left;
+}
 #canvasBkgd
 {
 	background-image: url('imgs/leather.jpg');
