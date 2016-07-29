@@ -6,7 +6,9 @@
 var canvas;//this is our canvas object
 var context;//we draw, animate, etc. to the context of the canvas, not the canvas itself
 var clad;//image of the cladogram with a transparent background
-var canvasPos;//an array holding the current x-coord and y-coord of the top-left corner of the canvas
+var picPos;//an array holding the current x-coord and y-coord of the top-left corner of the canvas
+var pic;
+var area;
 
 window.onload=init;
 
@@ -14,7 +16,17 @@ function init()
     {   //use jQuery to set the background grass of the body of the webpage
         $("body").css("background-image", "url('imgs/turf.jpeg')");
 
-        //assign the handles to the canvas & the context
+        /*$('#area1').click(test(e){
+        e.preventDefault();
+
+        alert(test);
+
+
+    });
+        area= document.getElementById("area1");
+        area.addEventListener("click",test);
+        */
+        /*assign the handles to the canvas & the context
 		canvas = document.getElementById("cladCanvas");
 		context = canvas.getContext("2d");
 
@@ -25,6 +37,10 @@ function init()
 		window.addEventListener("scroll", updatePos);
 		window.addEventListener("resize", updatePos);
 
+        */
+       pic= document.getElementById("cladSmall");
+        
+        //pic.addEventListener("click", zoomer);
 		//display initial cladogram
 		clad = makeImg('imgs/clad_a.png');
         clad.alt="cladogram img";
@@ -32,7 +48,7 @@ function init()
         draw(clad);
 
         //record the initial coords of the canvas
-        canvasPos = getPosition(canvas);
+        //picPos = getPosition(pic);
 	}
 
 //return a new image object
@@ -63,12 +79,18 @@ function redraw(clad, xOffset, yOffset)
 //put the part of the clad that was clicked in the center of the canvas
 function zoomer(event)
 {
-    var x = event.pageX - canvasPos.x;//canvasPos.x is the current x-coord of the canvas
-    var y = event.pageY - canvasPos.y;//canvasPos.y is the current y-coord of the canvas
+    
+    
+    var x = event.pageX - picPos.x;//canvasPos.x is the current x-coord of the canvas
+    var y = event.pageY - picPos.y;//canvasPos.y is the current y-coord of the canvas
     //x & y now represent the coordinates of the mouse click on the canvas
 
+    alert("x: "+ x +",   y: "+ y);
+
+    //Comment to get zoom working
+    /*
     //erase old image from canvas (this happens about 60 times per second)
-    context.clearRect(0,0,canvas.width,canvas.height);
+    context.clearRect(0,0,pic.width,pic.height);
 
     //transform the canvas coords so the clicked coords are now in the center
     context.transform(1, 0, 0, 1, -(x-(canvas.width/2)), -(y-(canvas.height/2)));
@@ -122,5 +144,61 @@ function getPosition(element)
 //this gets called when the page moves. it keeps track of the canvas's coords on the page
 function updatePos()
 {
-    canvasPos = getPosition(canvas);
+    picPos = getPosition(canvas);
+}
+
+function test(num){
+    
+    if(num ==1){
+        alert("Clicked in Land Plants")
+    }
+
+    else if(num==2){
+
+        alert("Clicked in Bryophyte");
+    }
+
+    else if(num==3){
+
+        alert("Clicked in Tracheophytes");
+    }
+    else if(num==4){
+
+        alert("Clicked in Lycophyta");
+    }
+    else if(num==5){
+
+        alert("Clicked in Euphyllophyte");
+    }
+    else if(num==6){
+
+        alert("Clicked in Pteridophyta");
+    }
+    else if(num==7){
+
+        alert("Clicked in Spermatophyte");
+    }
+    else if(num==8){
+
+        alert("Clicked in Gymnosperms");
+    }
+    else if(num==9){
+
+        alert("Clicked in Angiosperms");
+
+    }
+    else if(num==10){
+
+        alert("Clicked in Anthocerotophyta");
+    }
+    else if(num==11){
+
+        alert("Clicked in Hepatophyta");
+    }
+    else if(num==12){
+
+        alert("Clicked in Bryophyta");
+    }
+
+    
 }
