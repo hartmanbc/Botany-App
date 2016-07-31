@@ -24,9 +24,11 @@ function init()
   }
 }
 
-function doPlaceLabels()
+function switchToCanvas()
 {
-
+  //remove label background, divs, and labels from DOM
   
+  //create tree canvas and box canvas & hide one of them
   
+  //create "start quiz" button. when clicked, it unhides the quiz window and pulls the first question from DB
 }
