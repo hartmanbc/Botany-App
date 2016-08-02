@@ -8,36 +8,45 @@
         <link rel="stylesheet" type="text/css" href="mainStyle.css" />
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="initializeClad.js"></script>
+		<script src="drag_drop.js"></script>
 	</head>
 
-	<body>
-        	<div id="banner"><img src="imgs/banner.png" alt="The Embryophytes Banner" title="The Land Plants" width="1000"/> </div>
+	<body style="background-image: url('imgs/turf.jpeg');">
+        <div id="banner"><img src="imgs/banner.png" alt="The Embryophytes Banner" title="The Land Plants" width="700"/> </div>
 
-		<div id="quizWindow"></div>
+		<div id="quizWindow">
+            <!-- PHP goes here -->
+        </div>
 
-        	<div class="cvs" id="canvasBkgd">
-			<canvas class="cvs" id="cladCanvas" width="1200" height="800">UPDATE YOUR BROWSER. THIS APP USES THE HTML5 CANVAS.</canvas>
+        <div id="displayControl">
+            <p id="radioGroup">
+                <input type="radio" name="displayType" value="TREE_CLAD" onclick="treeClad()" checked />TREE CLAD
+                <input type="radio" name="displayType" style="margin-left: 150px;" value="BOX_CLAD" onclick="boxClad()" />BOX CLAD
+            </p>
+
+            <img id="controlImg" src="imgs/clad_a.png" alt="Tree Clad Image Map" title="click me to navigate the clad" ismap usemap="" />
+        </div>
+
+        <div class="cvs" id="canvasDiv">
+			<!--<canvas class="cvs" id="cladCanvas" width="1200" height="800">UPDATE YOUR BROWSER. THIS APP USES THE HTML5 CANVAS.</canvas>-->
+			<!--<img id="labelClad" class="cvs" src="imgs/newClad2_a.png" />-->
 		</div>
-		
-		<img ismap usemap= "cladmap" id="cladSmall" src="imgs/newClad2.png"  />
-		<map name="cladmap">
-			<area id="area1" shape="rect"  coords="0,30,35,113" href="javascript:test(1)" />
-			<area id="area2" shape="rect"  coords="58,2,80,73" href="javascript:test(2)" />
-			<area id="area3" shape="rect"  coords="61,83,83,145" href="javascript:test(3)" />
-			<area id="area4" shape="rect"  coords="107,2,195,20" href="javascript:test(4)" />
-			<area id="area5" shape="rect"  coords="110,23,133,73" href="javascript:test(5)" />
-			<area id="area6" shape="rect"  coords="170,25,260,40" href="javascript:test(6)" />
-			<area id="area7" shape="rect"  coords="173,45,195,97" href="javascript:test(7)" />
-			<area id="area8" shape="rect"  coords="219,50,303,67" href="javascript:test(8)" />
-			<area id="area9" shape="rect"  coords="219,72,307,88" href="javascript:test(9)" />
-			<area id="area10" shape="rect"  coords="105,87,170,102" href="javascript:test(10)" />
-			<area id="area11" shape="rect"  coords="103,105,172,121" href="javascript:test(11)" />
-			<area id="area12" shape="rect"  coords="104,126,180,145" href="javascript:test(12)" />
-		</map>
 
-
-        	<div id="infoWindow"></div>
+        <!-- infoWindow DIV MUST NEVER CONTAIN ANYTHING BUT THE LABEL IMAGES BEING USED. ITS # OF CHILD NODES IS USED FOR DETERMINING WHEN ALL LABELS HAVE BEEN PLACED -->
+        <div id="infoWindow">
+	    <img src="imgs/labels/1/Embryophytes1.png" id="label0" class="labels 0" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Tracheophytes.png" id="label1" class="labels 1" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Bryophyte1.png" id="label2" class="labels 2" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Lycophyta.png" id="label3" class="labels 3" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Euphyllophyte1.png" id="label4" class="labels 4" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Anthrocerotophyta1.png" id="label5" class="labels 5" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Bryophyta1.png" id="label6" class="labels 6" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Hepatophyta1.png" id="label7" class="labels 7" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Pteridophyta1.png" id="label8" class="labels 8" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Spermatophyte1.png" id="label9" class="labels 9" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Angiosperms1.png" id="label10" class="labels 10" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Gymnosperms1.png" id="label11" class="labels 11" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+		</div>
 	
 	</body>
 </html>
