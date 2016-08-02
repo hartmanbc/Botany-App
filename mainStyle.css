@@ -6,24 +6,68 @@
 
 #quizWindow
 {
-    width: 400px;
-	height: 300px;
+    display: none;
+    width: 500px;
+	height: 200px;
+	position: fixed;
+	right: 5px;
+	top: 5px;
+	background-color: white;
+	opacity: .6;
+	box-shadow: 20px 20px 10px #444; /* #444 is rgb dark grey */
+	border-radius: 10px;
+}
+
+#quizWindow > button
+{
+    width: 100px;
+    height:100px;
+    position: relative;
+    top: 50px;
+    left: 200px;
+    border-radius: 100px;
+    color: white;
+    background-color: red;
+    opacity: 1;
+    box-shadow: 4px 4px 2px #222;
+}
+
+#displayControl
+{
+    display: none;
+    width: 500px;
+	height: 400px;
 	position: fixed;
 	left: 5px;
 	top: 5px;
 	background-color: white;
 	opacity: .6;
-	box-shadow: 20px 20px 10px #444;
+	box-shadow: 20px 20px 10px #444; /* #444 is rgb dark grey */
 }
 
-#cladCanvas
+#radioGroup > input
 {
-	float: left;
+    margin-left: 52px;
+    margin-right: 5px;
 }
-#canvasBkgd
+
+#displayControl > img
+{
+    position: relative;
+    top: 100px;
+    left: 30px;
+    width: 450px;
+}
+
+canvas
+{
+    display: none;
+}
+
+#canvasDiv
 {
 	background-image: url('imgs/leather.jpg');
-	box-shadow: 15px 15px 10px #333;
+	box-shadow: 15px 15px 10px #333; /* #333 is rgb dark grey */
 }
 
 .cvs
@@ -33,21 +77,113 @@
 	margin: auto;
 }
 
-#cladMap
+.droppable
 {
-    width: 400px;
-    height: 300px;
-    position: fixed;
-    left: 5px;
-    top: 320px;
+    width: 300px;
+    height: 80px;
+    /*opacity: 0; */  /*make the droppables invisible */
+    transform: rotate(10deg);  /*makes the label look like it was dropped at a non-perfect alignment with the blank spot*/
+    text-align: center;
+    vertical-align: center;
+}
+
+#div0 /*Embryophytes*/
+{
+    transform: rotate(-90deg);/* -90 rotates left and orients the label that's placed inside it properly*/
+    position: relative;
+    left: -100px;
+    top: -470px;
+}
+
+#div1 /*Tracheophytes*/
+{
+    transform: rotate(-90deg);
+    position: relative;
+    left: 100px;
+    top: -750px;
+}
+
+#div2 /*Bryophytes*/
+{
+    transform: rotate(-90deg);
+    position: relative;
+    left: 120px;
+    top: -400px;
+}
+
+#div3 /*Lycophyta*/
+{
+    position: relative;
+    left: 430px;
+    top: -1030px;
+}
+
+#div4 /*Euphyllophytes*/
+{
+    transform: rotate(-90deg);
+    position: relative;
+    left: 320px;
+    top: -900px;
+}
+
+#div5 /*Anthocerotophyta*/
+{
+    position: relative;
+    left: 375px;
+    top: -740px;
+}
+
+#div6 /*Bryophyta*/
+{
+    position: relative;
+    left: 375px;
+    top: -720px;
+}
+
+#div7 /*Hematophyta*/
+{
+    position: relative;
+    left: 400px;
+    top: -680px;
+}
+
+#div8 /*Pteridophyta*/
+{
+    position: relative;
+    left: 690px;
+    top: -1315px;
+}
+
+#div9 /*Spermatophytes*/
+{
+    transform: rotate(-90deg);
+    position: relative;
+    left: 575px;
+    top: -1200px;
+}
+
+#div10 /*Angiosperms*/
+{
+    position: relative;
+    left: 850px;
+    top: -1325px;
+}
+
+#div11 /*Gymnosperms*/
+{
+    position: relative;
+    left: 850px;
+    top: -1300px;
 }
 
 #infoWindow
 {
-    width: 1400px;
-	height: 300px;
+    width: 1000px;
+	height: 200px;
 	margin: auto;
 	margin-top: 20px;
+/*
 	border: 76px solid transparent;
 	border-image: url('imgs/gems16.png') 80 80 repeat round;
+*/
 }
