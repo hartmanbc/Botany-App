@@ -99,8 +99,10 @@ function switchToCanvas()
 
     //Creates and sets a new background for the canvas
     var newBkgnd = new Image();
-    newBkgnd.src = "imgs/clad_a.png";
-    newBkgnd.title = "All labels have been dragged";
+
+    //This
+    newBkgnd.src = "imgs/cladIdea.png";
+    newBkgnd.title = "Please select a display from the right menu";
     newBkgnd.className = "cvs";
     var parent = document.getElementById("canvasDiv");
     parent.appendChild(newBkgnd);
@@ -125,20 +127,79 @@ function switchToCanvas()
 
 function treeClad()
 {
-    var image = document.getElementById("controlImg");
+
+    //Hides the block diagram and then makes the cladogram appear
+    var oldImage= document.getElementById("boxControlImg");
+    /*
     image.src = "imgs/clad_a.png";
     image.alt = "Tree Clad Image Map";
     image.style.top = "100px";
     image.style.left = "30px";
+*/
+    //image.id= "treeClad";
+    
+    oldImage.style.display="none";
+   
+
+    var newImage = document.getElementById("cladControlImg");
+
+    newImage.style.display="block";
+
+    newImage.addEventListener("click", displayCoords);
+
+
+    //document.getElementById("treeClad").addEventListener("click", displayCoords);
     //image.usemap = "treeMap";
 }
 
 function boxClad()
 {
-    var image = document.getElementById("controlImg");
-    image.src = "imgs/boxClad.jpg";
+
+    //Hides the cladogram and then makes the block diagram appear
+    var oldImage = document.getElementById("cladControlImg");
+
+    oldImage.style.display="none";
+
+    var newImage= document.getElementById("boxControlImg");
+
+    newImage.style.display="block";
+
+    //newImage.addEventListener("click", displayCoords);
+    /*
+    image.src = "imgs/BoxDiagram.png";
     image.alt = "Box Clad Image Map";
     image.style.top = "25px";
     image.style.left = "20px";
+    image.id= "boxDiagram";
+
+
     //image.usemap = "boxMap";
+    document.getElementById("boxDiagram").addEventListener("click", displayCoords);
+
+*/
+}
+
+function displayCoords(event){
+
+
+    //offset based on location of the image in the displayControl window
+    var xOffset= 36;
+    var yOffset= 191;
+
+    var x= event.clientX-xOffset;
+    var y= event.clientY-yOffset;
+
+    alert("X coords: "+x+ ", Y coords: "+y);
+
+}
+
+function cladTest(num){
+
+    alert (num);
+
+}
+
+function boxTest(num){
+
+    alert (num);
 }

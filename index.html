@@ -19,12 +19,103 @@
         </div>
 
         <div id="displayControl">
+
+            <p style="text-align: center;" ><b> Please select which display you would like.</b></p>
             <p id="radioGroup">
-                <input type="radio" name="displayType" value="TREE_CLAD" onclick="treeClad()" checked />TREE CLAD
+                <input type="radio" name="displayType" value="TREE_CLAD" onclick="treeClad()" />TREE CLAD
                 <input type="radio" name="displayType" style="margin-left: 150px;" value="BOX_CLAD" onclick="boxClad()" />BOX CLAD
+
             </p>
 
-            <img id="controlImg" src="imgs/clad_a.png" alt="Tree Clad Image Map" title="click me to navigate the clad" ismap usemap="" />
+            <!--Creates two images that will be toggled between for the display control. Right now, when a mapped area
+              of either the box or clad image is clicked, a method is called that just alerts with the number passed in-->
+            <img id="cladControlImg" src="imgs/cladIdea.png" alt="Tree Clad Image Map" title="click me to navigate the clad" ismap usemap="cladMap" />
+            <map name="cladMap">
+
+                <area id="cladEmbr" shape="rect"  coords="2,61,33,223" href="javascript:cladTest(1)" />
+                <area id="cladTrach" shape="rect"  coords="80,0,113,146" href="javascript:cladTest(2)" />
+                <area id="cladBryophyte" shape="rect"  coords="85,166,118,290" href="javascript:cladTest(3)" />
+                <area id="cladLyco" shape="rect"  coords="158,0,280,38" href="javascript:cladTest(4)" />
+                <area id="cladEuph" shape="rect"  coords="160,47,192,145" href="javascript:cladTest(5)" />
+                <area id="cladAnth" shape="rect"  coords="152,170,250,205" href="javascript:cladTest(6)" />
+                <area id="cladBryophyta" shape="rect"  coords="146,208,250,247" href="javascript:cladTest(7)" />
+                <area id="cladMarc" shape="rect"  coords="153,251,262,295" href="javascript:cladTest(8)" />
+                <area id="cladPter" shape="rect"  coords="253,45,376,86" href="javascript:cladTest(9)" />
+                <area id="cladSper" shape="rect" coords="253,95,286,193" href="javascript:cladTest(10)" />
+                <area id="cladAngi" shape="rect" coords="320,101,441,138" href="javascript:cladTest(11)" />
+                <area id="cladGymn" shape="rect" coords="318,142,445,181" href="javascript:cladTest(12)" />
+
+
+
+
+            </map>
+
+
+            <img id="boxControlImg" src="imgs/BoxDiagramColored.png" alt="Box Image Map" title="click me to navigate the box" ismap usemap="boxMap" />
+
+            <map name="boxMap">
+
+                <area id="boxEmbr1" shape="rect"  coords="0,0,448,26" href="javascript:boxTest(1)" />
+                <area id="boxEmbr2" shape="rect"  coords="152,27,173,300" href="javascript:boxTest(2)" />
+                <area id="boxEmbr3" shape="rect"  coords="0,0,7,300" href="javascript:boxTest(3)" />
+                <area id="boxEmbr4" shape="rect"  coords="0,292,448,300" href="javascript:boxTest(4)" />
+                <area id="boxEmbr5" shape="rect"  coords="440,0,448,300" href="javascript:boxTest(5)" />
+
+
+                <area id="boxTrach1" shape="rect"  coords="174,27,447,47" href="javascript:boxTest(6)" />
+                <area id="boxTrach2" shape="rect"  coords="174,27,263,130" href="javascript:boxTest(7)" />
+                <area id="boxTrach3" shape="rect"  coords="174,130,178,179" href="javascript:boxTest(8)" />
+                <area id="boxTrach4" shape="rect"  coords="259,130,263,179" href="javascript:boxTest(9)" />
+                <area id="boxTrach5" shape="rect"  coords="174,175,263,291" href="javascript:boxTest(10)" />
+                <area id="boxTrach6" shape="rect"  coords="434,47,440,291" href="javascript:boxTest(11)" />
+                <area id="boxTrach7" shape="rect"  coords="264,287,434,291" href="javascript:boxTest(12)" />
+
+
+                <area id="boxBryophyte1" shape="rect"  coords="7,46,12,292" href="javascript:boxTest(13)" />
+                <area id="boxBryophyte2" shape="rect"  coords="7,26,152,46" href="javascript:boxTest(14)" />
+                <area id="boxBryophyte3" shape="rect"  coords="149,46,152,292" href="javascript:boxTest(15)" />
+                <area id="boxBryophyte4" shape="rect"  coords="12,123,149,130" href="javascript:boxTest(16)" />
+                <area id="boxBryophyte5" shape="rect"  coords="12,204,149,211" href="javascript:boxTest(17)" />
+                <area id="boxBryophyte6" shape="rect"  coords="12,287,149,292" href="javascript:boxTest(18)" />
+
+
+                <area id="boxLyco" shape="rect"  coords="178,130,259,175" href="javascript:boxTest(19)" />
+
+
+                <area id="boxEuph1" shape="rect"  coords="264,119,268,173" href="javascript:boxTest(20)" />
+                <area id="boxEuph2" shape="rect"  coords="344,119,347,173" href="javascript:boxTest(21)" />
+                <area id="boxEuph3" shape="rect"  coords="264,47,434,71" href="javascript:boxTest(22)" />
+                <area id="boxEuph4" shape="rect"  coords="264,172,347,287" href="javascript:boxTest(23)" />
+                <area id="boxEuph5" shape="rect"  coords="347,265,434,287" href="javascript:boxTest(24)" />
+                <area id="boxEuph6" shape="rect"  coords="264,71,347,119" href="javascript:boxTest(25)" />
+
+
+                <area id="boxAnth" shape="rect"  coords="12,46,149,123" href="javascript:boxTest(26)" />
+
+                <area id="boxMarc" shape="rect"  coords="12,130,149,204" href="javascript:boxTest(27)" />
+
+                <area id="boxBryophyta" shape="rect"  coords="12,211,149,292" href="javascript:boxTest(28)" />
+
+                <area id="boxPter" shape="rect"  coords="268,119,344,172" href="javascript:boxTest(29)" />
+
+
+                <area id="boxSper1" shape="rect"  coords="347,71,434,97" href="javascript:boxTest(30)" />
+                <area id="boxSper2" shape="rect"  coords="347,97,353,265" href="javascript:boxTest(31)" />
+                <area id="boxSper3" shape="rect"  coords="427,96,434,265" href="javascript:boxTest(32)" />
+                <area id="boxSper4" shape="rect"  coords="347,150,434,177" href="javascript:boxTest(33)" />
+                <area id="boxSper5" shape="rect"  coords="347,230,434,265" href="javascript:boxTest(34)" />
+
+
+                <area id="boxGymn" shape="rect"  coords="353,97,427,150" href="javascript:boxTest(35)" />
+
+                <area id="boxAngi" shape="rect"  coords="353,150,427,230" href="javascript:boxTest(36)" />
+
+
+
+            </map>
+
+
+
         </div>
 
         <div class="cvs" id="canvasDiv">
@@ -41,7 +132,7 @@
             <img src="imgs/labels/1/Euphyllophyte1.png" id="label4" class="labels 4" draggable="true" ondragstart="drag(event)" width="220" height="75" />
             <img src="imgs/labels/1/Anthrocerotophyta1.png" id="label5" class="labels 5" draggable="true" ondragstart="drag(event)" width="220" height="75" />
             <img src="imgs/labels/1/Bryophyta1.png" id="label6" class="labels 6" draggable="true" ondragstart="drag(event)" width="220" height="75" />
-            <img src="imgs/labels/1/Hepatophyta1.png" id="label7" class="labels 7" draggable="true" ondragstart="drag(event)" width="220" height="75" />
+            <img src="imgs/labels/1/Marchantiophyta1.png" id="label7" class="labels 7" draggable="true" ondragstart="drag(event)" width="220" height="75" />
             <img src="imgs/labels/1/Pteridophyta1.png" id="label8" class="labels 8" draggable="true" ondragstart="drag(event)" width="220" height="75" />
             <img src="imgs/labels/1/Spermatophyte1.png" id="label9" class="labels 9" draggable="true" ondragstart="drag(event)" width="220" height="75" />
             <img src="imgs/labels/1/Angiosperms1.png" id="label10" class="labels 10" draggable="true" ondragstart="drag(event)" width="220" height="75" />

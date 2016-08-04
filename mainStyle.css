@@ -8,7 +8,7 @@
 {
     display: none;
     width: 500px;
-	height: 200px;
+	height: 400px;
 	position: fixed;
 	right: 5px;
 	top: 5px;
@@ -32,11 +32,21 @@
     box-shadow: 4px 4px 2px #222;
 }
 
+#boxControlImg{
+
+    display:none;
+}
+
+#cladControlImg{
+    display:none;
+
+}
+
 #displayControl
 {
     display: none;
     width: 500px;
-	height: 400px;
+	height: 500px;
 	position: fixed;
 	left: 5px;
 	top: 5px;
